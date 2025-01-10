@@ -27,12 +27,12 @@ pipeline {
             }
         }
 
-        stage('Docker Image Creation') {
+          stage('Docker Image Creation') {
             steps {
                 script {
                     echo 'Creating Docker Image...'
-                    // Menjalankan perintah Docker sesuai dengan konfigurasi Anda
-                    bat 'docker build -t myapp .'
+                    // Pastikan build dilakukan di direktori yang sesuai dengan Dockerfile
+                    bat 'docker build -f Dockerfile -t myapp .'
                 }
             }
         }
